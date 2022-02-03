@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simitci.Order", "Simitci.Or
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simitci.Shipment", "Simitci.Shipment\Simitci.Shipment.csproj", "{EFC65E7D-67D6-481D-953B-15896F378BA9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedContracts", "SharedContracts", "{6C83C329-2E31-4B92-A7CE-86DA330794F4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

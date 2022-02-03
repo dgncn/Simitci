@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "MessageSender": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

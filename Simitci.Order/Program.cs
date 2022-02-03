@@ -5,7 +5,7 @@ using Simitci.Order.Data;
 using Simitci.Order.Services;
 using System;
 using System.IO;
-
+using System.Threading.Tasks;
 
 /// <summary>
 /// Order servisinin görevi client'ın siparişini oluşturmaktır. 
@@ -21,7 +21,7 @@ namespace Simitci.Order
             var provider = GetServiceProvider();
             var orderService = provider.GetService<IOrderService>();
 
-            Console.WriteLine("Sipariş oluşturmak için 1'e basın.");
+            Console.WriteLine("2 saniyede bir otomatik sipariş oluşturur");
             string character;
             do
             {
@@ -31,6 +31,21 @@ namespace Simitci.Order
                     orderService.CreateOrder();
                 }
             } while (character == "1");
+
+            //while (true)
+            //{
+            //    Task.Run(() =>
+            //    {
+            //        orderService.CreateOrder();
+            //    });
+            //    Task.Delay(TimeSpan.FromSeconds(2)).Wait();
+            //}
+            //while (true)
+            //{
+            //    Console.WriteLine("Published: ");
+            //    orderService.CreateOrder();
+            //    Task.Delay(2000);
+            //}
         }
 
 
@@ -47,7 +62,6 @@ namespace Simitci.Order
 
             services
                 .AddDbContext<OrderContext>(options => options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
-
 
             var provider = services.BuildServiceProvider();
             return provider;
